@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "guardrails",
+  "owner": {
+    "name": "Rustem Idiiatullin"
+  },
+  "description": "Self-hosted marketplace shipping the agent-guardrails plugin.",
+  "plugins": [
+    {
+      "name": "agent-guardrails",
+      "source": "./",
+      "description": "Guardrails for AI-generated code: reusable skills, adversarial review agents, and a machine gate that blocks a risky commit until the right specialist has signed off.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Rustem Idiiatullin"
+      },
+      "keywords": ["ai-engineering", "code-review", "quality-gate"]
+    }
+  ]
+}

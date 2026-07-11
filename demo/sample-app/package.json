@@ -1,0 +1,6 @@
+{
+  "name": "sample-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tiny sample repo used by the agent-guardrails demo."
+}

@@ -1,0 +1,45 @@
+name: Validate Plugin
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  structure-and-demo:
+    name: Structure + 60-second demo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Make scripts executable
+        run: chmod +x scripts/*.sh demo.sh
+
+      - name: Validate plugin structure
+        run: ./scripts/validate-structure.sh
+
+      - name: Run the 60-second demo (gate must block the bad change, pass the fix)
+        run: ./demo.sh
+
+  claude-cli-validate:
+    name: claude plugin validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Validate manifests with the real CLI
+        run: claude plugin validate . --strict

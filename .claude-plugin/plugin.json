@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "agent-guardrails",
+  "displayName": "Agent Guardrails",
+  "version": "0.1.0",
+  "description": "Guardrails for AI-generated code: reusable skills, adversarial review agents, and a machine gate that blocks a risky commit until the right specialist has signed off.",
+  "author": {
+    "name": "Rustem Idiiatullin"
+  },
+  "homepage": "https://github.com/rustidi98/agent-guardrails",
+  "repository": "https://github.com/rustidi98/agent-guardrails",
+  "license": "MIT",
+  "keywords": [
+    "ai-engineering",
+    "code-review",
+    "review-agents",
+    "quality-gate",
+    "skills",
+    "reliability"
+  ]
+}
