@@ -3,7 +3,7 @@
 [![Validate Plugin](https://github.com/rustidi98/agent-guardrails/actions/workflows/validate-plugin.yml/badge.svg)](https://github.com/rustidi98/agent-guardrails/actions/workflows/validate-plugin.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-An installable [Claude Code](https://code.claude.com/docs/en/plugins) plugin that puts **guardrails around AI-generated code**: reusable skills, a team of adversarial review agents, and a machine gate that **blocks a risky commit until the right specialist has signed off** — and never lets a hardcoded secret ship.
+An installable [Claude Code](https://code.claude.com/docs/en/plugins) plugin that puts **guardrails around AI-generated code**: reusable skills, a team of adversarial review agents, and a machine gate that can **block commits with defined hard findings until the required specialist reviews are present**. The included demo detects a hardcoded credential and a swallowed error.
 
 ## See it work in 60 seconds
 
@@ -45,7 +45,7 @@ Once enabled you get:
 
 ```
 /agent-guardrails:reviewer-gate        # run the machine gate on the current repo
-/agent-guardrails:eval-harness         # any of the 14 skills, namespaced
+/agent-guardrails:eval-harness         # any of the 15 skills, namespaced
 @agent-guardrails:silent-failure-hunter  # any of the 6 review agents, @-mentioned
 ```
 
@@ -55,7 +55,7 @@ The gate also wires in automatically as a `PreToolUse` hook: before Claude runs 
 
 | Component | Count | Examples |
 |---|---|---|
-| **Skills** | 14 | `reviewer-gate`, `eval-harness`, `cost-aware-llm-pipeline`, `money-math-invariants`, `output-coverage-assertion`, `clean-build-verification`, `api-contract-audit`, `anti-bug-prevention` |
+| **Skills** | 15 | `reviewer-gate`, `eval-harness`, `cost-aware-llm-pipeline`, `money-math-invariants`, `output-coverage-assertion`, `clean-build-verification`, `api-contract-audit`, `anti-bug-prevention` |
 | **Review agents** | 6 | `silent-failure-hunter`, `auth-flow-reviewer`, `security-reviewer`, `typescript-reviewer`, `code-reviewer`, `qa-engineer` |
 | **Machine gate** | 1 | `scripts/verify-reviewer-gate.sh` — blast-radius → required reviewers + diff tripwires |
 
@@ -78,7 +78,7 @@ agent-guardrails/
 ├── .claude-plugin/
 │   ├── plugin.json          # plugin manifest
 │   └── marketplace.json     # self-hosting marketplace (installs this same repo)
-├── skills/<name>/SKILL.md   # 14 skills, one directory each
+├── skills/<name>/SKILL.md   # 15 skills, one directory each
 ├── agents/*.md              # 6 review agents
 ├── hooks/hooks.json         # PreToolUse wiring for the gate
 ├── scripts/
