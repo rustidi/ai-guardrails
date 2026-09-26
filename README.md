@@ -1,6 +1,6 @@
 # Agent Guardrails
 
-[![Validate Plugin](https://github.com/rustidi98/agent-guardrails/actions/workflows/validate-plugin.yml/badge.svg)](https://github.com/rustidi98/agent-guardrails/actions/workflows/validate-plugin.yml)
+[![Validate Plugin](https://github.com/rustidi/ai-guardrails/actions/workflows/validate-plugin.yml/badge.svg)](https://github.com/rustidi/ai-guardrails/actions/workflows/validate-plugin.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 An installable [Claude Code](https://code.claude.com/docs/en/plugins) plugin that puts **guardrails around AI-generated code**: reusable skills, a team of adversarial review agents, and a machine gate that can **block commits with defined hard findings until the required specialist reviews are present**. The included demo detects a hardcoded credential and a swallowed error.
@@ -10,7 +10,7 @@ An installable [Claude Code](https://code.claude.com/docs/en/plugins) plugin tha
 No install required — plain `bash` + `git`:
 
 ```bash
-git clone https://github.com/rustidi98/agent-guardrails
+git clone https://github.com/rustidi/ai-guardrails
 cd agent-guardrails
 ./demo.sh
 ```
@@ -31,7 +31,7 @@ The demo spins up a throwaway repo, makes a **bad payments change** (a hardcoded
 
 ```bash
 # 1. add this repo as a marketplace, then install the plugin
-/plugin marketplace add rustidi98/agent-guardrails
+/plugin marketplace add rustidi/ai-guardrails
 /plugin install agent-guardrails@guardrails
 ```
 

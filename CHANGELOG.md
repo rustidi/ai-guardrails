@@ -28,4 +28,4 @@ Initial public release as an installable Claude Code plugin.
   real `claude plugin validate --strict`, and an end-to-end run of the demo.
 - Self-hosting `marketplace.json` so the repo installs via `/plugin marketplace add`.
 
-[0.1.0]: https://github.com/rustidi98/agent-guardrails/releases/tag/v0.1.0
+[0.1.0]: https://github.com/rustidi/ai-guardrails/releases/tag/v0.1.0
